@@ -1,30 +1,33 @@
-<div class='main-nav'>
-  <nav class='navbar navbar-expand-lg navbar-dark bg-dark d-flex flex-column'>
-      <div class="navbar-header p-0">
-          <a class='navbar-brand' [routerLink]='["/"]'>Home</a>
-          <button type='button' class='navbar-toggler' data-toggle='collapse' data-target='#navbarNav' [attr.aria-expanded]='isExpanded' (click)='toggle()'>
-              <span class='sr-only'>Toggle navigation</span>
-              <span class='navbar-toggler-icon'></span>
-          </button>
-          <div id="navbarNav" class='navbar-collapse collapse p-0' [ngClass]='{ "in": isExpanded }'>
-              <ul class='nav navbar-nav flex-column'>
-                  <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-                      <a [routerLink]='["/"]' class="nav-link" (click)='collapse()'>
-                          <span class='fas fa-home'></span> Home
-                      </a>
-                  </li>
-                  <li class="nav-item" [routerLinkActive]='["link-active"]'>
-                      <a [routerLink]='["/counter"]' class="nav-link" (click)='collapse()'>
-                          <span class='fas fa-sort-amount-up'></span> Counter
-                      </a>
-                  </li>
-                  <li class="nav-item" [routerLinkActive]='["link-active"]'>
-                      <a [routerLink]='["/fetch-data"]' class="nav-link" (click)='collapse()'>
-                          <span class='fas fa-database'></span> Fetch data
-                      </a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </nav>
-</div>
+    <!-- ***** Header Area Start ***** -->
+<header class="header_area animated sticky slideInDown">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <!-- Menu Area Start -->
+            <div class="col-12 col-lg-10">
+                <div class="menu_area">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <!-- Logo -->
+                        <div class="row">
+                         
+                            <button class="navbar-toggler pull-right" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        </div>
+                        <!-- Menu Area -->
+                        <div class="collapse navbar-collapse" id="ca-navbar">
+                            <ul class="navbar-nav ml-auto" id="nav">
+                                <li class="nav-item active"><a class="nav-link" href="Index#home">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="Index#features">Features</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/Index#about">Support</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/Index#downloads">Downloads</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/Index#screenshot">Platforms</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/Index#testimonials">Testimonials</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/Plugins">Plugins</a></li>
+
+                                <li class="nav-item"><a class="nav-link" href="/Index#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -16,6 +16,7 @@ namespace GingerPluginWebsite
         public readonly string Publisher;
 
         public readonly IEnumerable<VersionInfo> Versions;
+        public long Downloads;
 
         public PluginInfo(Plugins Plugin, IEnumerable<VersionInfo> versions, Publisher publisher)
         {
@@ -29,6 +30,26 @@ namespace GingerPluginWebsite
             this.Publisher = publisher.Name;
 
 
+        }
+
+
+        public static List<PluginInfo> SearchPlugins(GingerPluginDBContext db,string searchKey)
+        {
+            List<PluginInfo> Plugins = new List<PluginInfo>();
+
+            foreach (Plugins plugin in db.Plugins.Where(x => x.Name.ToUpper().Contains(searchKey.ToUpper())))
+            {
+
+           
+                Publisher publisher = db.Publisher.Where(x => x.PublisherId == plugin.PublisherId).FirstOrDefault();
+
+                PluginInfo pi = new PluginInfo(plugin, db.VersionInfo, publisher);
+                pi.Downloads = pi.Versions.Sum(x => x.Downloads).Value;
+
+                Plugins.Add(pi);
+            }
+
+            return Plugins;
         }
     }
 }

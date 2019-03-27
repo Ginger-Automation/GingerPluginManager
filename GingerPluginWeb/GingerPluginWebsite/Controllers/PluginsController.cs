@@ -21,6 +21,14 @@ namespace GingerPluginWebsite.Controllers
             return db.Plugins;
         }
 
-     
+        [HttpGet("search/{key}", Name = "Search")]
+        public List<PluginInfo> search(string key)
+        {
+
+            var plugins= PluginInfo.SearchPlugins(db, key);
+            return plugins;
+        }
+
+
     }
 }

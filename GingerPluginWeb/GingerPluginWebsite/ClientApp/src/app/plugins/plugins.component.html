@@ -1,0 +1,17 @@
+<div class="jumbotron jumbotron-fluid" style="background:#4c4c4c">
+    <div class="container">
+        <h1 class="display-5" style="color:white">Extend Automation Capabilities with Plugins</h1>
+        <br/>
+        <form 
+              #searchForm="ngForm" 
+              (ngSubmit)="onSubmit(searchForm.value)"
+              >
+            <div class="input-group">
+                <input class="form-control width100" name="searchString" ngModel>
+                <span class="input-group-btn">
+                    <button class="btn btn-danger" type="submit">Search</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
